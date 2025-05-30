@@ -5,7 +5,11 @@
 
 class Comedy : public Movie {
 public:
-    Comedy();
+    int year;
+
+    Comedy() = default;
+
+    void readData (istream &is) override;
 };
 
 class ComedyFactory : public MovieFactory {

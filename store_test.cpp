@@ -10,6 +10,8 @@
 #include <sstream>
 #include <fstream>
 #include <cassert>
+#include "movie.h"
+#include "comedy.h"
 
 using namespace std;
 
@@ -30,6 +32,10 @@ void testStore1() {
   fs.close();
   string result = "IHHBRIBBIH";
   assert(out.str() == result);
+
+  
+
+
   cout << "End testStore1" << endl;
 }
 

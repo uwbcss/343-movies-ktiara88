@@ -9,7 +9,7 @@ map <string, MovieFactory *> &MovieFactory::getMap() {
 }
 
 void MovieFactory::registerType (const string &type, MovieFactory *factory) {
-    getMap().emplace(type,factory);
+    getMap().emplace(type, factory);
 }
 
 Movie *MovieFactory::create (const string &type) {
