@@ -14,7 +14,7 @@ void MovieFactory::registerType (const string &type, MovieFactory *factory) {
 
 Movie *MovieFactory::create (const string &type) {
     if (!getMap().count(type)) {
-        cout << "Don't know how to create " << type << "movie" << endl;
+        cout << "Invalid code: " << type << endl;
         return nullptr;
     }
     return getMap().at(type)->makeMovie();

@@ -23,7 +23,6 @@ private:
 
 class Movie {
 public:
-    // add movie functions
     virtual void readData (istream &is) = 0;
     virtual ~Movie () = default;
     int stock;
