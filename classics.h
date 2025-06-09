@@ -5,11 +5,14 @@
 
 class Classics : public Movie {
 public:
-    int majorActorReleaseDate;
+    string majorActor;
+    int releaseDate;
 
     Classics() = default;
 
     void readData (istream &is) override;
+
+    void print (ostream &os) const override;
 };
 
 class ClassicsFactory : public MovieFactory {

@@ -9,6 +9,8 @@ public:
     Drama() = default;
     
     void readData (istream &is) override;
+
+    void print (ostream &os) const override;
 };
 
 class DramaFactory : public MovieFactory {

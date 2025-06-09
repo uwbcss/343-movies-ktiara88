@@ -26,4 +26,9 @@ void Drama::readData (istream &is) {
     getline (is, yearString);
     year = stoi(yearString);
 }
+
+void Drama::print (ostream &os) const {
+    os << director << ", " << title << ", " << year << " (" << stock << ")" << endl;
+}
+
 DramaFactory anonymous_DramaFactory;

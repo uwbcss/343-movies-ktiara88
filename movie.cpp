@@ -19,3 +19,7 @@ Movie *MovieFactory::create (const string &type) {
     }
     return getMap().at(type)->makeMovie();
 }
+ostream &operator << (ostream &os, const Movie &movie) {
+    movie.print (os);
+    return os;
+}

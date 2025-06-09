@@ -10,6 +10,8 @@ public:
     Comedy() = default;
 
     void readData (istream &is) override;
+
+    void print (ostream &os) const override;
 };
 
 class ComedyFactory : public MovieFactory {

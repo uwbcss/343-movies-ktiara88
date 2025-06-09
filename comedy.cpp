@@ -28,4 +28,8 @@ void Comedy::readData (istream &is) {
     year = stoi(yearString);
 }
 
+void Comedy::print (ostream &os) const {
+    os << title << ", " << year << ", " << director << " (" << stock << ")";
+}
+
 ComedyFactory anonymous_ComedyFactory;
