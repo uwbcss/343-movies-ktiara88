@@ -11,7 +11,11 @@ public:
 
     void readData (istream &is) override;
 
+    char getType() const override;
+
     void print (ostream &os) const override;
+
+    bool isEqual (const Movie &other) const override;
 };
 
 class ComedyFactory : public MovieFactory {

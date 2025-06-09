@@ -4,7 +4,7 @@
 using namespace std;
 
 map <string, CommandFactory *> &CommandFactory::getMap() {
-    map <string, CommandFactory *> factories;
+    static map <string, CommandFactory *> factories;
     return factories;
 }
 

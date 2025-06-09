@@ -28,8 +28,23 @@ void Comedy::readData (istream &is) {
     year = stoi(yearString);
 }
 
+char Comedy::getType() const {
+    return 'F'; 
+}
+
 void Comedy::print (ostream &os) const {
     os << title << ", " << year << ", " << director << " (" << stock << ")";
+}
+
+bool Comedy::isEqual (const Movie &other) const {
+    const Comedy* otherComedy = dynamic_cast<const Comedy*>(&other);
+    if (!otherComedy) {
+        return false;
+    }
+    return title == otherComedy->title && 
+        year == otherComedy->year && 
+        director == otherComedy->director;
+
 }
 
 ComedyFactory anonymous_ComedyFactory;

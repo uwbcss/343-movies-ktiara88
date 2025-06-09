@@ -35,8 +35,23 @@ void Classics::readData (istream &is) {
 
 }
 
+char Classics::getType() const {
+    return 'C';
+}
+
 void Classics::print (ostream &os) const {
     os << releaseDate << ", " << majorActor << ", " << director << ", " << title << " (" << stock << ")" << endl;
+}
+
+bool Classics::isEqual (const Movie &other) const {
+    const Classics* otherClassics = dynamic_cast<const Classics*>(&other);
+    if (!otherClassics) {
+        return false;
+    }
+    return title == otherClassics->title && 
+        releaseDate == otherClassics->releaseDate && 
+        majorActor == otherClassics->majorActor &&
+        director == otherClassics->director;
 }
 
 ClassicsFactory anonymous_ClassicsFactory; 

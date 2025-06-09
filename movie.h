@@ -28,16 +28,25 @@ public:
     virtual ~Movie () = default;
     virtual void print (ostream &os) const = 0;
     friend ostream &operator << (ostream &os, const Movie &movie);
+    virtual char getType() const = 0;
     bool operator==(const Movie &m) const;
+    virtual bool isEqual (const Movie &other) const = 0;
 
     int stock;
     string director;
     string title;
 };
 
-template <> struct hash <Movie> {
-    size_t operator()(const Movie &m) const {
-        // add operations for the has function
-    }
-}
+namespace std {
+    template <> struct hash <Movie*> {
+        size_t operator()(const Movie* m) const;
+    };
+};
+
+namespace std {
+    struct MoviePtrEqual {
+        bool operator() (const Movie* lhs, const Movie* rhs) const;
+    };
+};
+
 #endif // MOVIE_H
