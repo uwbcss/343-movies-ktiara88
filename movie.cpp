@@ -37,7 +37,3 @@ size_t hash<Movie*>::operator()(const Movie* m) const {
         default: return 3; // invalid type
     }
 }
-
-bool MoviePtrEqual::operator()(const Movie* lhs, const Movie* rhs) const {
-        return *lhs == *rhs;
-}

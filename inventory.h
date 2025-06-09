@@ -3,8 +3,11 @@
 
 #include "command.h"
 #include "movie.h"
+#include "comedy.h"
+#include "drama.h"
+#include "classics.h"
 #include <vector>
-#include <map>
+#include <unordered_map>
 #include <string>
 
 using namespace std;
@@ -22,8 +25,8 @@ public:
 
 
 private:
-    // the string will store the type, and the vector will contain the movie, which contains the info
-    map <string, vector <Movie*>> moviesByType;
+    // the string will store the movie with the stock for easy stock access
+    unordered_map<Movie*, int, hash <Movie*>, MoviePtrEqual> movies;
 
 };
 

@@ -43,10 +43,10 @@ namespace std {
     };
 };
 
-namespace std {
-    struct MoviePtrEqual {
-        bool operator() (const Movie* lhs, const Movie* rhs) const;
-    };
+struct MoviePtrEqual {
+    bool operator()(const Movie* lhs, const Movie* rhs) const {
+        return lhs->isEqual(*rhs);
+    }
 };
 
 #endif // MOVIE_H
