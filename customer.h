@@ -14,6 +14,8 @@ public:
     void printInfo ();
     void readData (istream& is);
     void addTransaction (const string& transaction);
+    void printHistory() const;
+    int getID() const;
 
 private:
     int id;

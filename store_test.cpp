@@ -12,6 +12,8 @@
 #include <cassert>
 #include "movie.h"
 #include "inventory.h"
+#include "customer.h"
+#include "history.h"
 
 using namespace std;
 
@@ -44,11 +46,39 @@ void testLoadMovies() {
 
   infile.close();
 
-  // Print the loaded inventory
-  inventory.printInventory();
+  // Can print the loaded inventory for debugging
+  // inventory.printInventory();
   cout << "End testLoadMovies\n" << endl;
 
 }
+
+void testLoadCustomers() {
+  cout << "Start testLoadCustomers" << endl;
+  ifstream infile("data4customers.txt");
+  if (!infile) {
+      cerr << "Failed to open customer file: " << endl;
+      return;
+  }
+
+  string line;
+  History h;
+  while (getline(infile, line)) {
+    if (line.empty()) continue;
+
+    stringstream ss(line);
+
+    Customer* c = new Customer();
+    c->readData (ss);
+    if (c != nullptr) {
+        h.addCustomer (c);
+    } 
+  }
+  // can print all history for debugging
+  // h.printAllHistory();
+  infile.close();
+  cout << "End testLoadCustomers\n" << endl;
+}
+
 void testStore1() {
   cout << "Start testStore1" << endl;
   // Should do something more, but lets just read files
@@ -70,6 +100,7 @@ void testStore1() {
 
 
   cout << "End testStore1\n" << endl;
+  
 }
 
 void testStore2() {
@@ -86,6 +117,7 @@ void testStoreFinal() {
 
 void testAll() {
   testLoadMovies();
+  testLoadCustomers();
   testStore1();
   testStore2();
   testStoreFinal();

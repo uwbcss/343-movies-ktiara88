@@ -7,12 +7,12 @@ Out of 25 points. Use output.txt created using
 
 Complete all questions with "Q:"
 
-Q: Does the program compile and run to completion: Yes/No
+Q: Does the program compile and run to completion: Yes
 
 - If the program does not compile or gives a segmentation error when run, 
 the maximum possible grade is 50%. No need to continue with the rest of self-evaluation
 
-Q: All public functions have been implemented: ENTER_NUMBER
+Q: All public functions have been implemented: -0
 
 - -2 for each functionality not implemented
 
@@ -20,8 +20,8 @@ For each command, state Full, Partial or None to indicate
 if it has been fully, partially or not implemented at all.
 Explain any partial implementations.
 
-Inventory: TODO(student)
-History: TODO(student)
+Inventory: Full
+History: Full
 Borrow: TODO(student)
 Return: TODO(student)
 
@@ -60,29 +60,29 @@ Q: Are all functions in .h and .cpp file documents (min -3): ENTER_NUMBER
 
 State the file and function where the information can be found
 
-invalid command code: TODO(student)
+invalid command code: command.cpp: Command *CommandFactory::create (const string &code)
 
-invalid movie type: TODO(student)
+invalid movie type: movie.cpp: Movie *MovieFactory::create (const string &type, istream &is)
 
-invalid customer ID: TODO(student)
+invalid customer ID: history.cpp: void History::readData(istream& is)
  
 invalid movie: TODO(student)
 
-factory classes: TODO(student)
+factory classes: command.h/command.cpp and movie.h/movie.cpp
 
-hashtable: TODO(student) (explain what the hashtable is used for)
+hashtable: inventory.h where map <char, vector <Movie*>> stores moviesByType, placing the keys (char), in individual buckets for O(1) retrieval
 
-container used for comedy movies: TODO(student)
+container used for comedy movies: inventory.h: map <char, vector <Movie*>> moviesByType;
 
-function for sorting comedy movies: TODO(student)
+function for sorting comedy movies: inventory.cpp: void Inventory::printInventory() (use a sort function with underlying operator< overload)
 
-function where comedy movies are sorted: TODO(student)
+function where comedy movies are sorted: inventory.cpp void: Inventory::printInventory() sorted when the function is called
 
 functions called when retrieving a comedy movie based on title and year: TODO(student)
 
-functions called for retrieving and printing customer history: TODO(student)
+functions called for retrieving and printing customer history: history.cpp: void History::readData(istream& is), and customer.cpp: void Customer::printHistory() const
 
-container used for customer history: TODO(student)
+container used for customer history: history.h: unordered_map <int, Customer*> customerDB;
 
 functions called when borrowing a movie: TODO(student)
 
@@ -92,12 +92,11 @@ explain borrowing a movie that has 0 stock: TODO(student)
 
 explain returning a movie that customer has not checked out: TODO(student)
 
-any static_cast or dynamic_cast used: TODO(student)
+any static_cast or dynamic_cast used: dynamic_cast used in comedy.cpp, drama.cpp, and classics.cpp in isEqual and lessThan functions
 
 ## Bonus +5
 
-Are there multiple files, of the form runit-without-XXX, where the same set of files will compile and run excluding some of the commands or genres? TODO(student)
-
+Are there multiple files, of the form runit-without-XXX, where the same set of files will compile and run excluding some of the commands or genres? YES
 
 
 

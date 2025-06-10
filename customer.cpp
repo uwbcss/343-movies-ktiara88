@@ -16,3 +16,15 @@ void Customer::readData (istream& is) {
 void Customer::addTransaction (const string& transaction) {
     history.push_back(transaction);
 }
+void Customer::printHistory() const {
+    cout << "History for " << id << " " << lastName << " " << firstName << ":" << endl;
+    if (history.empty()) {
+        cout << "No history for " << lastName << " " << firstName << endl;
+    }
+    for (const auto& entry : history) {
+        cout << "  " << entry << "\n";
+    }
+}
+int Customer::getID() const{
+    return id;
+}

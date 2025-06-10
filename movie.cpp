@@ -16,7 +16,7 @@ Movie *MovieFactory::create (const string &type, istream &is) {
     if (!getMap().count(type)) {
         string discardedLine;
         getline(is, discardedLine);
-        cout << "Invalid movie type: " << type << ", discarding line: " << discardedLine << endl;
+        cout << "Invalid movie type: " << type << ", discarding line:" << discardedLine << endl;
         return nullptr;
     }
     return getMap().at(type)->makeMovie();
