@@ -1,5 +1,7 @@
 #include "classics.h"
 #include <iostream> 
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -13,25 +15,26 @@ Movie *ClassicsFactory::makeMovie() const {
 
 
 void Classics::readData (istream &is) {
-     string stockString, directorString, titleString, majorActorFirstNameString, 
-            majorActorLastNameString, releaseDataString;
+     string stockString, directorString, titleString;
 
+    // Read comma-separated fields
     getline(is, stockString, ',');
-    stock = stoi (stockString);
+    stock = stoi(trim(stockString));  // use a trim function if needed
 
-    getline (is, directorString, ',');
-    director = directorString;
+    getline(is, directorString, ',');
+    director = trim(directorString);
 
-    getline (is, titleString, ',');
-    title = titleString;
+    getline(is, titleString, ',');
+    title = trim(titleString);
 
-    getline (is, majorActorFirstNameString, ' ');
-    getline (is, majorActorLastNameString, ' ');
+    // Now read the remaining part from the stream
+    string majorActorFirst, majorActorLast;
+    int month, year;
+    is >> majorActorFirst >> majorActorLast >> month >> year;
 
-    majorActor = majorActorFirstNameString + majorActorLastNameString;
-
-    getline (is, releaseDataString);
-    releaseDate = stoi(releaseDataString);
+    majorActor = majorActorFirst + " " + majorActorLast;
+    releaseMonth = month;
+    this->year = year;
 
 }
 
@@ -40,7 +43,7 @@ char Classics::getType() const {
 }
 
 void Classics::print (ostream &os) const {
-    os << releaseDate << ", " << majorActor << ", " << director << ", " << title << " (" << stock << ")" << endl;
+    os << " " << year << ", " << releaseMonth << ", " << majorActor << ", " << director << ", " << title << " (" << stock << ")";
 }
 
 bool Classics::isEqual (const Movie &other) const {
@@ -49,9 +52,21 @@ bool Classics::isEqual (const Movie &other) const {
         return false;
     }
     return title == otherClassics->title && 
-        releaseDate == otherClassics->releaseDate && 
+        year == otherClassics->year && 
+        releaseMonth == otherClassics->releaseMonth &&
         majorActor == otherClassics->majorActor &&
         director == otherClassics->director;
+}
+
+bool Classics::lessThan (const Movie &other) const {
+    const Classics &rhs = dynamic_cast<const Classics&> (other);
+    if (year != rhs.year) {
+        return year < rhs.year;
+    }
+    if (releaseMonth != rhs.releaseMonth) {
+        return releaseMonth < rhs.releaseMonth;
+    }
+    return majorActor < rhs.majorActor;
 }
 
 ClassicsFactory anonymous_ClassicsFactory; 

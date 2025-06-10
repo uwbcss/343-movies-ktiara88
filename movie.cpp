@@ -12,9 +12,11 @@ void MovieFactory::registerType (const string &type, MovieFactory *factory) {
     getMap().emplace(type, factory);
 }
 
-Movie *MovieFactory::create (const string &type) {
+Movie *MovieFactory::create (const string &type, istream &is) {
     if (!getMap().count(type)) {
-        cout << "Invalid code: " << type << endl;
+        string discardedLine;
+        getline(is, discardedLine);
+        cout << "Invalid movie type: " << type << ", discarding line: " << discardedLine << endl;
         return nullptr;
     }
     return getMap().at(type)->makeMovie();
@@ -28,12 +30,16 @@ bool Movie::operator==(const Movie &m) const {
     return this->isEqual (m);
 }
 
-size_t hash<Movie*>::operator()(const Movie* m) const {
-    char type = m->getType();
-    switch (type) {
-        case 'F': return 0; // comedy
-        case 'D': return 1; // drama
-        case 'C': return 2; // classics
-        default: return 3; // invalid type
-    }
+bool Movie::operator<(const Movie &m) const {
+    return this->lessThan (m);
+}
+
+string Movie::trim(const string &str) {
+    const auto strBegin = str.find_first_not_of(" \t\r\n");
+    if (strBegin == string::npos) return ""; // no content
+
+    const auto strEnd = str.find_last_not_of(" \t\r\n");
+    const auto strRange = strEnd - strBegin + 1;
+
+    return str.substr(strBegin, strRange);
 }

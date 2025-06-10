@@ -7,7 +7,7 @@
 #include "drama.h"
 #include "classics.h"
 #include <vector>
-#include <unordered_map>
+#include <map>
 #include <string>
 
 using namespace std;
@@ -19,15 +19,14 @@ public:
 
     void readData (istream &is) override;
 
-    void addMovie (const Movie *movie);
+    void addMovie (Movie *movie);
 
     void printInventory () const;
 
 
 private:
-    // the string will store the movie with the stock for easy stock access
-    unordered_map<Movie*, int, hash <Movie*>, MoviePtrEqual> movies;
-
+    // the char will store the type, and the vector will contain the movie, which contains the infoAdd commentMore actions
+    map <char, vector <Movie*>> moviesByType;
 };
 
 class InventoryFactory : public CommandFactory {

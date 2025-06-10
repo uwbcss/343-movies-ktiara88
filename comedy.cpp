@@ -1,6 +1,7 @@
 
 #include "comedy.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -24,6 +25,7 @@ void Comedy::readData (istream &is) {
     getline (is, titleString, ',');
     title = titleString;
 
+    
     getline (is, yearString);
     year = stoi(yearString);
 }
@@ -33,7 +35,7 @@ char Comedy::getType() const {
 }
 
 void Comedy::print (ostream &os) const {
-    os << title << ", " << year << ", " << director << " (" << stock << ")";
+    os << title << ", " << year << "," << director << " (" << stock << ")";
 }
 
 bool Comedy::isEqual (const Movie &other) const {
@@ -45,6 +47,14 @@ bool Comedy::isEqual (const Movie &other) const {
         year == otherComedy->year && 
         director == otherComedy->director;
 
+}
+
+bool Comedy::lessThan (const Movie &other) const {
+    const Comedy &rhs = dynamic_cast<const Comedy&> (other);
+    if (title != rhs.title) {
+        return title < rhs.title;
+    }
+    return year < rhs.year;
 }
 
 ComedyFactory anonymous_ComedyFactory;

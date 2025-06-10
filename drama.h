@@ -1,10 +1,10 @@
 #ifndef DRAMA_H
 #define DRAMA_H
 #include "movie.h"
+#include <string>
 
 class Drama : public Movie {
 public:
-    int year;
 
     Drama() = default;
     
@@ -15,6 +15,8 @@ public:
     void print (ostream &os) const override;
 
     bool isEqual (const Movie &other) const override;
+
+    bool lessThan (const Movie &other) const override;
     
 };
 

@@ -1,5 +1,7 @@
 #include "inventory.h"
 #include <iostream>
+#include <algorithm> 
+#include <functional>
 
 using namespace std;
 
@@ -18,29 +20,36 @@ void Inventory::readData (istream &is) {
     printInventory();
 }
 
-void Inventory::addMovie (const Movie* movie) {
-    // auto it = movies.find(movie);
-    // if (it != movies.end()) {
-    //     it->second += movie->stock; // Combine stock for duplicates
-    // } else {
-    //     movies[movie] = movie->stock;
-    // }
+void Inventory::addMovie (Movie* movie) {
+    if (movie == nullptr) return;
+    char type = movie->getType();
+    moviesByType[type].push_back(movie);
 }
 
 void Inventory::printInventory() const {
-    vector <Movie*> comedies;
-    vector <Movie*> dramas;
-    vector <Movie*> classics;
-
-    for (const auto& pair: movies) {
-        Movie* m = pair.first;
-        char type = m->getType();
-        switch (type) {
-            case 'F': comedies.push_back (m); break;
-            case 'D': dramas.push_back (m); break;
-            case 'C': classics.push_back (m); break;
-            default: break;
+    auto printCategory = [](const vector<Movie*>& movies, const string& name) {
+        cout << "------ " << name << " ------" << endl;
+        vector<Movie*> sorted = movies;
+        sort(sorted.begin(), sorted.end(), [](Movie* a, Movie* b) {
+            return *a < *b;
+        });
+        for (const auto& m : sorted) {
+            cout << *m << endl;
         }
+    };
+
+    cout << "====== Inventory ======" << endl;
+
+    if (moviesByType.count('F')) {
+        printCategory(moviesByType.at('F'), "Comedies");
+    }
+    
+
+    if (moviesByType.count('D')) {
+        printCategory(moviesByType.at('D'), "Dramas");
     }
 
+    if (moviesByType.count('C')) {
+        printCategory(moviesByType.at('C'), "Classics");
+    }
 }

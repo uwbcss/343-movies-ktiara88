@@ -1,5 +1,6 @@
 #include "drama.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -32,7 +33,7 @@ char Drama::getType() const {
 }
 
 void Drama::print (ostream &os) const {
-    os << director << ", " << title << ", " << year << " (" << stock << ")" << endl;
+    os << director << "," << title << "," << year << " (" << stock << ")";
 }
 
 bool Drama::isEqual (const Movie &other) const {
@@ -43,6 +44,14 @@ bool Drama::isEqual (const Movie &other) const {
     return title == otherDrama->title && 
         year == otherDrama->year && 
         director == otherDrama->director;
+}
+
+bool Drama::lessThan (const Movie &other) const {
+    const Drama &rhs = dynamic_cast<const Drama&> (other);
+    if (director != rhs.director) {
+        return director < rhs.director;
+    }
+    return title < rhs.title;
 }
 
 DramaFactory anonymous_DramaFactory;

@@ -2,11 +2,12 @@
 #define CLASSICS_H
 
 #include "movie.h"
+#include <string>
 
 class Classics : public Movie {
 public:
     string majorActor;
-    int releaseDate;
+    int releaseMonth;
 
     Classics() = default;
 
@@ -17,6 +18,8 @@ public:
     void print (ostream &os) const override;
 
     bool isEqual (const Movie &other) const override;
+
+    bool lessThan (const Movie &other) const override;
 };
 
 class ClassicsFactory : public MovieFactory {

@@ -11,10 +11,44 @@
 #include <fstream>
 #include <cassert>
 #include "movie.h"
-#include "comedy.h"
+#include "inventory.h"
 
 using namespace std;
 
+void testLoadMovies() {
+  cout << "Start testLoadMovies" << endl;
+
+  Inventory inventory;
+
+  ifstream infile("data4movies.txt");
+  if (!infile.is_open()) {
+      cerr << "Failed to open file" << endl;
+      return;
+  }
+
+  string line;
+  while (getline(infile, line)) {
+      if (line.empty()) continue;
+
+      stringstream ss(line);
+      string type;
+      getline(ss, type, ','); // get movie type (F, D, C)
+
+      Movie* movie = MovieFactory::create(type, ss);
+      if (movie != nullptr) {
+          movie->readData(ss);
+          inventory.addMovie(movie);
+      }
+      
+  }
+
+  infile.close();
+
+  // Print the loaded inventory
+  inventory.printInventory();
+  cout << "End testLoadMovies\n" << endl;
+
+}
 void testStore1() {
   cout << "Start testStore1" << endl;
   // Should do something more, but lets just read files
@@ -32,16 +66,15 @@ void testStore1() {
   fs.close();
   string result = "IHHBRIBBIH";
   assert(out.str() == result);
-
   
 
 
-  cout << "End testStore1" << endl;
+  cout << "End testStore1\n" << endl;
 }
 
 void testStore2() {
   cout << "Start testStore2" << endl;
-  cout << "End testStore2" << endl;
+  cout << "End testStore2\n" << endl;
 }
 
 void testStoreFinal() {
@@ -52,6 +85,7 @@ void testStoreFinal() {
 }
 
 void testAll() {
+  testLoadMovies();
   testStore1();
   testStore2();
   testStoreFinal();
