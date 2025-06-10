@@ -1,0 +1,494 @@
+Tue Jun 10 06:47:59 UTC 2025
+Linux LinuxMachine 6.10.14-linuxkit #1 SMP Mon Feb 24 16:35:16 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
+uid=1000(cssuwbstudent) gid=1000(cssuwbstudent) groups=1000(cssuwbstudent),10(wheel)
+=====================================================
+1. If the section below is empty, the program compiles 
+   without warnings with -Wall -Wextra flags
+=====================================================
+=====================================================
+2. If the section below is empty or has the expected output 
+    the program puns and produces correct output
+=====================================================
+Start testLoadMovies
+Invalid movie type: Z, discarding line: 10, Hal Ashby, Harold and Maude, Bud Cort 3 1971
+Invalid movie type: Z, discarding line: 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
+====== Inventory ======
+------ Comedies ------
+ Annie Hall, 1977, Woody Allen (10)
+ Fargo, 1996, Joel Coen (10)
+ National Lampoon's Animal House, 1978, John Landis (10)
+ Pirates of the Caribbean, 2000, Different Years (10)
+ Pirates of the Caribbean, 2003, Gore Verbinski (10)
+ Sleepless in Seattle, 1993, Nora Ephron (10)
+ When Harry Met Sally, 1989, Rob Reiner (10)
+ You've Got Mail, 1998, Nora Ephron (10)
+------ Dramas ------
+ Barry Levinson, Good Morning Vietnam,1988 (10)
+ Barry Levinson, Same Director Good Morning Vietnam,1988 (10)
+ Clint Eastwood, Unforgiven,1992 (10)
+ Gus Van Sant, Good Will Hunting,2000 (10)
+ Jonathan Demme, Silence of the Lambs,1991 (10)
+ Nancy Savoca, Dogfight,1991 (10)
+ Phillippe De Broca, King of Hearts,1967 (10)
+ Steven Spielberg, Schindler's List,1993 (10)
+------ Classics ------
+ 1938, 9, Cary Grant, George Cukor, Holiday (10)
+ 1938, 9, Katherine Hepburn, George Cukor, Holiday (10)
+ 1939, 2, Clark Gable, Victor Fleming, Gone With the Wind (10)
+ 1939, 2, Vivien Leigh, Victor Fleming, Gone With the Wind (10)
+ 1939, 7, Judy Garland, Victor Fleming, The Wizard of Oz (10)
+ 1940, 5, Cary Grant, George Cukor, The Philadelphia Story (10)
+ 1940, 5, Katherine Hepburn, George Cukor, The Philadelphia Story (10)
+ 1941, 10, Humphrey Bogart, John Huston, The Maltese Falcon (10)
+ 1942, 8, Humphrey Bogart, Michael Curtiz, Casablanca (10)
+ 1942, 8, Ingrid Bergman, Michael Curtiz, Casablanca (10)
+ 1946, 11, Donna Reed, Frank Capra, It's a Wonderful Life (10)
+ 1946, 11, James Steward, Frank Capra, It's a Wonderful Life (10)
+ 1971, 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (10)
+ 1971, 3, Ruth Gordon, Hal Ashby, Harold and Maude (10)
+End testLoadMovies
+
+Start testLoadCustomers
+History for 5000 Frog Freddie:
+No history for Frog Freddie
+History for 9000 Lizard Larry:
+No history for Lizard Larry
+History for 1000 Mouse Minnie:
+No history for Mouse Minnie
+History for 1111 Mouse Mickey:
+No history for Mouse Mickey
+History for 7777 Spider Sammy:
+No history for Spider Sammy
+History for 6666 Donkey Darrell:
+No history for Donkey Darrell
+History for 9999 Duck Daffy:
+No history for Duck Daffy
+History for 2000 Duck Donald:
+No history for Duck Donald
+History for 4444 Moose Bullwinkle:
+No history for Moose Bullwinkle
+History for 8888 Pig Porky:
+No history for Pig Porky
+History for 8000 Wacky Wally:
+No history for Wacky Wally
+History for 3333 Witch Wicked:
+No history for Witch Wicked
+End testLoadCustomers
+
+=====================================
+Start testStoreFinal
+Invalid movie type: Z, discarding line: 10, Hal Ashby, Harold and Maude, Bud Cort 3 1971
+Invalid movie type: Z, discarding line: 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
+====== Inventory ======
+Invalid customer ID: 1000
+Invalid customer ID: 5000
+Invalid customer ID: 8000
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: R
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: R
+Invalid code: B
+Invalid code: B
+Invalid code: R
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: R
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: X
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: R
+Invalid code: Z
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+Invalid code: B
+====== Inventory ======
+Invalid customer ID: 1000
+Invalid customer ID: 1111
+Invalid customer ID: 5000
+Invalid customer ID: 8000
+Invalid customer ID: 8888
+End testStoreFinal
+=====================================
+Done.
+=====================================================
+3. If the section below is empty, then there are no clang-tidy warnings 
+   (ignore warnings from system headers, such as "13554 warnings generated.")
+=====================================================
+[1/12] Processing file /home/cssuwbstudent/tkim88/343-movies-ktiara88/borrow.cpp.
+20396 warnings generated.
+[2/12] Processing file /home/cssuwbstudent/tkim88/343-movies-ktiara88/classics.cpp.
+39308 warnings generated.
+[3/12] Processing file /home/cssuwbstudent/tkim88/343-movies-ktiara88/comedy.cpp.
+54862 warnings generated.
+[4/12] Processing file /home/cssuwbstudent/tkim88/343-movies-ktiara88/command.cpp.
+70431 warnings generated.
+[5/12] Processing file /home/cssuwbstudent/tkim88/343-movies-ktiara88/customer.cpp.
+90387 warnings generated.
+[6/12] Processing file /home/cssuwbstudent/tkim88/343-movies-ktiara88/drama.cpp.
+105941 warnings generated.
+[7/12] Processing file /home/cssuwbstudent/tkim88/343-movies-ktiara88/history.cpp.
+126065 warnings generated.
+[8/12] Processing file /home/cssuwbstudent/tkim88/343-movies-ktiara88/inventory.cpp.
+149935 warnings generated.
+[9/12] Processing file /home/cssuwbstudent/tkim88/343-movies-ktiara88/main.cpp.
+163743 warnings generated.
+[10/12] Processing file /home/cssuwbstudent/tkim88/343-movies-ktiara88/movie.cpp.
+179314 warnings generated.
+[11/12] Processing file /home/cssuwbstudent/tkim88/343-movies-ktiara88/return.cpp.
+199707 warnings generated.
+[12/12] Processing file /home/cssuwbstudent/tkim88/343-movies-ktiara88/store_test.cpp.
+220862 warnings generated.
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/borrow.cpp:13:3: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+   13 |   char mediaType, movieType;
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/borrow.cpp:35:8: error: implicit conversion 'Movie *' -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   35 |   if (!tempMovie) {
+      |       ~^        
+      |                  == nullptr
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/borrow.cpp:46:8: error: implicit conversion 'Movie *' -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   46 |   if (!actualMovie) {
+      |       ~^          
+      |                    == nullptr
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/borrow.h:6:1: error: #includes are not sorted properly [llvm-include-order,-warnings-as-errors]
+    6 | #include "movie.h"
+      | ^        ~~~~~~~~~
+      |          "inventory.h"
+    7 | #include "inventory.h"
+      |          ~~~~~~~~~~~~~
+      |          "movie.h"
+    8 | #include <unordered_map>
+      |          ~~~~~~~~~~~~~~~
+      |          <string>
+    9 | #include <string>
+      |          ~~~~~~~~
+      |          <unordered_map>
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/classics.cpp:13:3: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+   13 |   string stockString, directorString, titleString;
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/classics.cpp:26:3: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+   26 |   string majorActorFirst, majorActorLast;
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/classics.cpp:27:3: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+   27 |   int month, year;
+      |   ^~~~~~~~~~~~~~~~
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/classics.cpp:44:8: error: implicit conversion 'const Classics *' -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   44 |   if (!otherClassics) {
+      |       ~^            
+      |                      == nullptr
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/classics.cpp:64:17: error: invalid case style for variable 'anonymous_ClassicsFactory' [readability-identifier-naming,-warnings-as-errors]
+   64 | ClassicsFactory anonymous_ClassicsFactory;
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 anonymousClassicsFactory
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/comedy.cpp:13:3: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+   13 |   string stockString, directorString, titleString, yearString;
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/comedy.cpp:36:8: error: implicit conversion 'const Comedy *' -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   36 |   if (!otherComedy) {
+      |       ~^          
+      |                    == nullptr
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/comedy.cpp:51:15: error: invalid case style for variable 'anonymous_ComedyFactory' [readability-identifier-naming,-warnings-as-errors]
+   51 | ComedyFactory anonymous_ComedyFactory;
+      |               ^~~~~~~~~~~~~~~~~~~~~~~
+      |               anonymousComedyFactory
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/command.cpp:16:8: error: implicit conversion 'size_type' (aka 'unsigned long') -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   16 |   if (!getMap().count(code)) {
+      |       ~^                   
+      |                             == 0u
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/command.h:4:1: error: #includes are not sorted properly [llvm-include-order,-warnings-as-errors]
+    4 | #include <string>
+      | ^        ~~~~~~~~
+      |          <map>
+    5 | #include <map>
+      |          ~~~~~
+      |          <string>
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/customer.cpp:23:10: error: implicit conversion 'size_type' (aka 'unsigned long') -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   23 |   return currentlyBorrowed.count(movie);
+      |          ^                             
+      |                                         != 0u
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/customer.h:6:1: error: #includes are not sorted properly [llvm-include-order,-warnings-as-errors]
+    6 | #include <vector>
+      | ^        ~~~~~~~~
+      |          <unordered_set>
+    7 | #include <unordered_set>
+      |          ~~~~~~~~~~~~~~~
+      |          <vector>
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/drama.cpp:12:3: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+   12 |   string stockString, directorString, titleString, yearString;
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/drama.cpp:35:8: error: implicit conversion 'const Drama *' -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   35 |   if (!otherDrama) {
+      |       ~^         
+      |                   == nullptr
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/drama.cpp:50:14: error: invalid case style for variable 'anonymous_DramaFactory' [readability-identifier-naming,-warnings-as-errors]
+   50 | DramaFactory anonymous_DramaFactory;
+      |              ^~~~~~~~~~~~~~~~~~~~~~
+      |              anonymousDramaFactory
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/history.cpp:20:8: error: implicit conversion 'Customer *' -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   20 |   if (!c)
+      |       ~^
+      |          == nullptr
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/history.cpp:20:10: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+   20 |   if (!c)
+      |          ^
+      |           {
+   21 |     return;
+      |            
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/history.cpp:33:8: error: 'auto &pair' can be declared as 'const auto &pair' [readability-qualified-auto,-warnings-as-errors]
+   33 |   for (auto &pair : customerDB) {
+      |        ^
+      |        const 
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/history.cpp:42:16: error: invalid case style for variable 'anonymous_HistoryFactory' [readability-identifier-naming,-warnings-as-errors]
+   42 | HistoryFactory anonymous_HistoryFactory;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                anonymousHistoryFactory
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/history.h:4:1: error: #includes are not sorted properly [llvm-include-order,-warnings-as-errors]
+    4 | #include "command.h"
+      | ^        ~~~~~~~~~~~
+      |          "classics.h"
+    5 | #include "movie.h"
+      |          ~~~~~~~~~
+      |          "comedy.h"
+    6 | #include "comedy.h"
+      |          ~~~~~~~~~~
+      |          "command.h"
+    7 | #include "drama.h"
+      |          ~~~~~~~~~
+      |          "customer.h"
+    8 | #include "classics.h"
+      |          ~~~~~~~~~~~~
+      |          "drama.h"
+    9 | #include "customer.h"
+      |          ~~~~~~~~~~~~
+      |          "movie.h"
+   10 | #include <vector>
+      |          ~~~~~~~~
+      |          <string>
+   11 | #include <unordered_map>
+   12 | #include <string>
+      |          ~~~~~~~~
+      |          <vector>
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/inventory.cpp:20:24: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+   20 |   if (movie == nullptr)
+      |                        ^
+      |                         {
+   21 |     return;
+      |            
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/inventory.cpp:39:7: error: implicit conversion 'size_type' (aka 'unsigned long') -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   39 |   if (moviesByType.count('F')) {
+      |       ^                      
+      |                               != 0u
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/inventory.cpp:43:7: error: implicit conversion 'size_type' (aka 'unsigned long') -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   43 |   if (moviesByType.count('D')) {
+      |       ^                      
+      |                               != 0u
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/inventory.cpp:47:7: error: implicit conversion 'size_type' (aka 'unsigned long') -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   47 |   if (moviesByType.count('C')) {
+      |       ^                      
+      |                               != 0u
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/inventory.cpp:53:8: error: implicit conversion 'const Movie *' -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   53 |   if (!movie)
+      |       ~^    
+      |              == nullptr
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/inventory.cpp:53:14: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+   53 |   if (!movie)
+      |              ^
+      |               {
+   54 |     return nullptr;
+      |                    
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/inventory.cpp:60:32: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+   60 |   if (it == moviesByType.end())
+      |                                ^
+      |                                 {
+   61 |     return nullptr;
+      |                    
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/inventory.cpp:75:18: error: invalid case style for variable 'anonymous_InventoryFactory' [readability-identifier-naming,-warnings-as-errors]
+   75 | InventoryFactory anonymous_InventoryFactory;
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                  anonymousInventoryFactory
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/inventory.h:4:1: error: #includes are not sorted properly [llvm-include-order,-warnings-as-errors]
+    4 | #include "command.h"
+      | ^        ~~~~~~~~~~~
+      |          "classics.h"
+    5 | #include "movie.h"
+      |          ~~~~~~~~~
+      |          "comedy.h"
+    6 | #include "comedy.h"
+      |          ~~~~~~~~~~
+      |          "command.h"
+    7 | #include "drama.h"
+    8 | #include "classics.h"
+      |          ~~~~~~~~~~~~
+      |          "movie.h"
+    9 | #include <vector>
+      |          ~~~~~~~~
+      |          <map>
+   10 | #include <map>
+      |          ~~~~~
+      |          <string>
+   11 | #include <string>
+      |          ~~~~~~~~
+      |          <vector>
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/inventory.h:26:36: error: invalid case style for parameter 'Movie' [readability-identifier-naming,-warnings-as-errors]
+   26 |     Movie* findMovie (const Movie *Movie) const; 
+      |                                    ^~~~~
+      |                                    movie
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/movie.cpp:16:8: error: implicit conversion 'size_type' (aka 'unsigned long') -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+   16 |   if (!getMap().count(type)) {
+      |       ~^                   
+      |                             == 0u
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/movie.cpp:34:15: error: method 'trim' can be made static [readability-convert-member-functions-to-static,-warnings-as-errors]
+   34 | string Movie::trim(const string &str) {
+      |               ^
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/movie.cpp:36:32: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+   36 |   if (strBegin == string::npos)
+      |                                ^
+      |                                 {
+   37 |     return ""; // no content
+      |                             
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/return.cpp:13:3: error: multiple declarations in a single statement reduces readability [readability-isolate-declaration,-warnings-as-errors]
+   13 |   char mediaType, movieType;
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/return.h:5:1: error: #includes are not sorted properly [llvm-include-order,-warnings-as-errors]
+    5 | #include "movie.h"
+      | ^        ~~~~~~~~~
+      |          "customer.h"
+    6 | #include "customer.h"
+      |          ~~~~~~~~~~~~
+      |          "inventory.h"
+    7 | #include "inventory.h"
+      |          ~~~~~~~~~~~~~
+      |          "movie.h"
+    8 | #include <unordered_map>
+      |          ~~~~~~~~~~~~~~~
+      |          <string>
+    9 | #include <string>
+      |          ~~~~~~~~
+      |          <unordered_map>
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/store_test.cpp:33:22: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+   33 |     if (line.empty())
+      |                      ^
+      |                       {
+   34 |       continue;
+      |                
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/store_test.cpp:65:22: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+   65 |     if (line.empty())
+      |                      ^
+      |                       {
+   66 |       continue;
+      |                
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/store_test.cpp:98:27: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+   98 |     if (movieLine.empty())
+      |                           ^
+      |                            {
+   99 |       continue;
+      |                
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/store_test.cpp:106:9: error: implicit conversion 'Movie *' -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+  106 |     if (movie) {
+      |         ^    
+      |               != nullptr
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/store_test.cpp:122:22: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  122 |     if (line.empty())
+      |                      ^
+      |                       {
+  123 |       continue;
+      |                
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/store_test.cpp:142:25: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  142 |     if (cmdLine.empty())
+      |                         ^
+      |                          {
+  143 |       continue;
+      |                
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/store_test.cpp:150:10: error: implicit conversion 'Command *' -> 'bool' [readability-implicit-bool-conversion,-warnings-as-errors]
+  150 |     if (!cmd)
+      |         ~^  
+      |              == nullptr
+/home/cssuwbstudent/tkim88/343-movies-ktiara88/store_test.cpp:150:14: error: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements,-warnings-as-errors]
+  150 |     if (!cmd)
+      |              ^
+      |               {
+  151 |       continue;
+      |                
+Suppressed 220788 warnings (220787 in non-user code, 1 with check filters).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+47 warnings treated as errors
+=====================================================
+4. If the section below is empty, clang-format does not find any formatting issues
+   You can fix formatting errors using "clang-format -i <filename>" on command line
+=====================================================
+Running clang-format on ./borrow.cpp
+Running clang-format on ./classics.cpp
+Running clang-format on ./comedy.cpp
+Running clang-format on ./command.cpp
+Running clang-format on ./customer.cpp
+Running clang-format on ./drama.cpp
+Running clang-format on ./history.cpp
+Running clang-format on ./inventory.cpp
+Running clang-format on ./main.cpp
+Running clang-format on ./movie.cpp
+Running clang-format on ./return.cpp
+Running clang-format on ./store_test.cpp
+=====================================================
+5. If there are any memory leaks, it should be in the output below
+=====================================================
+=====================================================
+6. Using valgrind to check for memory leaks
+   Check for "definitely lost" in the output below
+=====================================================
+==5640== Memcheck, a memory error detector
+==5640== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==5640== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==5640== Command: ./a.out
+==5640== Parent PID: 5138
+==5640== 
+==5640== 
+==5640== HEAP SUMMARY:
+==5640==     in use at exit: 12,140 bytes in 148 blocks
+==5640==   total heap usage: 420 allocs, 272 frees, 142,721 bytes allocated
+==5640== 
+==5640== LEAK SUMMARY:
+==5640==    definitely lost: 10,672 bytes in 94 blocks
+==5640==    indirectly lost: 1,468 bytes in 54 blocks
+==5640==      possibly lost: 0 bytes in 0 blocks
+==5640==    still reachable: 0 bytes in 0 blocks
+==5640==         suppressed: 0 bytes in 0 blocks
+==5640== Rerun with --leak-check=full to see details of leaked memory
+==5640== 
+==5640== For lists of detected and suppressed errors, rerun with: -s
+==5640== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Tue Jun 10 06:48:37 UTC 2025
+=====================================================
+To create an output.txt file with all the output from this script
+Run the below command
+      ./create-output.sh > output.txt 2>&1 
+=====================================================
