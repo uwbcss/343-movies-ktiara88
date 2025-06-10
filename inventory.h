@@ -23,6 +23,7 @@ public:
 
     void printInventory () const;
 
+    Movie* findMovie (const Movie *Movie) const; 
 
 private:
     // the char will store the type, and the vector will contain the movie, which contains the infoAdd commentMore actions

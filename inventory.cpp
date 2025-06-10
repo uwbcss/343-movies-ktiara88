@@ -53,3 +53,24 @@ void Inventory::printInventory() const {
         printCategory(moviesByType.at('C'), "Classics");
     }
 }
+
+Movie* Inventory::findMovie(const Movie* movie) const {
+    if (!movie) return nullptr;
+
+    char type = movie->getType();
+
+    // Check if the type exists in the inventory
+    auto it = moviesByType.find(type);
+    if (it == moviesByType.end()) return nullptr;
+
+    // Search the vector for a matching movie using isEqual
+    const vector<Movie*>& movieList = it->second;
+    for (Movie* m : movieList) {
+        if (m->isEqual(*movie)) {
+            return m;
+        }
+    }
+    
+    // No match found
+    return nullptr;
+}

@@ -66,7 +66,7 @@ invalid movie type: movie.cpp: Movie *MovieFactory::create (const string &type, 
 
 invalid customer ID: history.cpp: void History::readData(istream& is)
  
-invalid movie: TODO(student)
+invalid movie: if a movie is invalid for borrowing: borrow.cpp: void Borrow::readData (istream& is)
 
 factory classes: command.h/command.cpp and movie.h/movie.cpp
 
@@ -78,17 +78,17 @@ function for sorting comedy movies: inventory.cpp: void Inventory::printInventor
 
 function where comedy movies are sorted: inventory.cpp void: Inventory::printInventory() sorted when the function is called
 
-functions called when retrieving a comedy movie based on title and year: TODO(student)
+functions called when retrieving a comedy movie based on title and year: inventory.cpp: Movie* Inventory::findMovie(const Movie* movie)
 
 functions called for retrieving and printing customer history: history.cpp: void History::readData(istream& is), and customer.cpp: void Customer::printHistory() const
 
 container used for customer history: history.h: unordered_map <int, Customer*> customerDB;
 
-functions called when borrowing a movie: TODO(student)
+functions called when borrowing a movie: borrow.cpp: void Borrow::readData (istream& is) (there are some helper functions and functions from other classes that are called inside of it)
 
-explain borrowing a movie that does not exist: TODO(student)
+explain borrowing a movie that does not exist: in borrow.cpp: void Borrow::readData (istream& is), if a movie doesn't exist, it is stated so, and we move on to the next line
 
-explain borrowing a movie that has 0 stock: TODO(student)
+explain borrowing a movie that has 0 stock: in borrow.cpp: void Borrow::readData (istream& is), if a movie has 0 stock, it is stated so, and we move on to the next line
 
 explain returning a movie that customer has not checked out: TODO(student)
 

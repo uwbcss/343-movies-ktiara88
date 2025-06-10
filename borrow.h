@@ -11,6 +11,25 @@
 class Borrow : public Command {
 public: 
     Borrow () = default;
+
+    Borrow (unordered_map<int, Customer*>& customers, Inventory& inventory);
+
+    void readData (istream &is) override;
+
+private: 
+    unordered_map<int, Customer*>& customerDB;
+    Inventory& inventory;
 };
+
+class BorrowFactory : public CommandFactory {
+public:
+    BorrowFactory(unordered_map<int, Customer*>& customers, Inventory& inventory);
+    Command* makeCommand() const override;
+
+private:
+    unordered_map<int, Customer*>& customerDB;
+    Inventory& inventory;
+};
+
 
 #endif // BORROW_H
